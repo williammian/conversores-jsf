@@ -1,0 +1,23 @@
+<faces-config 
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+	<application>
+		<message-bundle>com.wm.exemplos.jsf.conversores.Mensagens</message-bundle>
+	</application>
+	
+	<!-- 
+	<converter>
+	    <description>Configurando converter</description>
+	    <converter-id>telefoneConverter</converter-id>
+	    <converter-class>com.wm.exemplos.jsf.conversores.ex3.TelefoneConverter</converter-class>
+	</converter>
+	
+	<converter>
+	    <description>Configurando converter padrao para a classe Telefone</description>
+	    <converter-for-class>com.wm.exemplos.jsf.conversores.ex3.Telefone</converter-for-class>
+	    <converter-class>com.wm.exemplos.jsf.conversores.ex3.TelefoneConverter</converter-class>
+	</converter>
+	-->
+</faces-config>

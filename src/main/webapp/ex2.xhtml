@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+>
+
+<ui:composition template="layout.xhtml">
+	<ui:define name="head">	
+		Exemplo 02: DateTimeConverter e NumberConverter 
+	</ui:define>
+	
+	<ui:define name="body">
+	
+		<h:form>		
+			<h:panelGroup layout="block" styleClass="form-group">
+				<h:messages 
+					errorClass="alert alert-danger"
+					style="list-style: none; margin: 0; padding: 0"
+				/>
+			</h:panelGroup>
+		
+			<h:panelGroup layout="block" styleClass="form-group">
+				<h:outputLabel value="Produto: " styleClass="control-label" />
+				
+				<p class="form-control-static">
+					<h:outputText value="Smartphone Modelo 10G" />				
+				</p>
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block" styleClass="form-group">
+				<h:outputLabel value="Data Lançamento: " styleClass="control-label" />
+				
+				<h:inputText 
+					id="dataLancamento" 
+					value="#{produtoBeanEx2.produto.dataLancamento}" 
+					styleClass="form-control"
+				>
+					<f:convertDateTime
+				      	timeZone="#{usuarioLogadoBeanEx2.timeZone}"
+				      	locale="#{usuarioLogadoBeanEx2.locale}"
+				      	pattern="dd/MM/yyyy"
+				    />	
+				</h:inputText>
+			</h:panelGroup>
+			
+			<h:panelGroup layout="block" styleClass="form-group">
+				<h:outputLabel value="Preço: " styleClass="control-label" />
+				
+				<h:inputText 
+					id="preco" 
+					value="#{produtoBeanEx2.produto.preco}" 
+					styleClass="form-control"
+				>
+					<f:convertNumber
+				      	pattern="#,##0.00"				      	
+      					locale="#{usuarioLogadoBeanEx2.locale}"
+				    />
+				</h:inputText>
+			</h:panelGroup>
+			
+			<h:commandButton value="Salvar" styleClass="btn btn-primary btn-large" />
+		</h:form>
+	
+	</ui:define>
+</ui:composition>
+</html>
